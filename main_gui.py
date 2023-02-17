@@ -25,17 +25,16 @@ def encProcess():
         set_entry_cptext(ciphertext)
 
 def decProcess():
-    cptext = entry_cptext.get()
+    cptext_raw = entry_cptext.get()
     key = entry_key.get()
     # check apakah ada entry penting kosong
-    if(len(cptext) == 0):
+    if(len(cptext_raw) == 0):
         messagebox.showerror('Decrypt Error', 'Input pada entry box ciphertext tidak boleh kosong, nyaa~')
-    elif(len(rc4mod.b64toutf8(cptext)) == 0 ):
-        messagebox.showerror('Decrypt Error', 'Input pada entry box ciphertext hanya berisi character bukan b64, nyaa~')
     elif(len(key) == 0):
         messagebox.showerror('Decrypt Error', 'Input pada entry box key tidak berisi , nyaa~')
     else:
         try:
+            cptext = rc4mod.b64toutf8(cptext_raw)
             plaintext = rc4mod.cipherTextDec(cptext, key)
             set_entry_ptext(plaintext)
         except:

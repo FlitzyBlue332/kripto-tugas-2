@@ -111,7 +111,7 @@ def cipherTextEnc(plaintext, key):
 
 def cipherTextDec(ciphertext, key):
     '''only accepts b64 text'''
-    ciphertext_arrint = texttoarrint(b64toutf8(ciphertext))
+    ciphertext_arrint = texttoarrint(ciphertext)
     plaintext_arrint = prga(ciphertext_arrint, key)
     plaintext = arrinttotext(plaintext_arrint)
     return plaintext
