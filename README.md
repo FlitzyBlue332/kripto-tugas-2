@@ -5,7 +5,7 @@ dibuat oleh:
 2. Muhammad Rizki Pratama (18220110)  
 
 ## Overview
-sistem cipher ini menggunakan RC4 sebagai dasar dan dimodifikasi sedemikian rupa. Bagian yang dimodifikasi adalah pada ksa, key yang dihasilkan di encrypt lagi dengan extended vigenere cipher. Setelah itu pada prga kami menerapkan konsep vigenere cipher pada saat pemilihan key yang akan di xor dengan plaintext. Untuk menambah ke-'randoman' lagi, kami mengeser juga mengubah key register pada prga dengan konsep mirip pada lsfr tetapi kami aplikasikan pada satu register secara keseluruhan.
+sistem cipher ini menggunakan RC4 sebagai dasar dan dimodifikasi sedemikian rupa. Bagian yang dimodifikasi adalah pada ksa, key yang dihasilkan di encrypt lagi dengan extended vigenere cipher. Setelah itu pada prga kami menerapkan konsep vigenere cipher pada saat pemilihan key yang akan di xor dengan plaintext. Untuk menambah ke-'randoman' lagi, kami mengeser juga mengubah key register pada prga dengan konsep mirip pada lsfr disimpan nilai xor dari elemen pertama register dengan elemen terakhir register, seluruh elemen register digeser kekanan, dan elemen pertama register diisi dengan nilai yang disimpan sebelumnya
 
 ## How to use
 1. buka terminal dan pindah direktori ke folder ini
