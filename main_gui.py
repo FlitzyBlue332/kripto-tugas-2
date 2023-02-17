@@ -38,7 +38,7 @@ def decProcess():
             plaintext = rc4mod.cipherTextDec(cptext, key)
             set_entry_ptext(plaintext)
         except:
-            messagebox.showerror('Decrypt error', 'Input ciphertext tidak dalam base64 yang benar\n sehingga terjadi error, nyaa~')
+            messagebox.showerror('Decrypt error', 'Input ciphertext tidak dalam base64 yang benar\nsehingga terjadi error, nyaa~\nSaran saya gunakan converter utf-8 ke b64')
 
 # cipher file 
 def encByteProcess():
