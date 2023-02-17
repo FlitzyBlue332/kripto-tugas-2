@@ -29,9 +29,11 @@ def decProcess():
     key = entry_key.get()
     # check apakah ada entry penting kosong
     if(len(cptext) == 0):
-        messagebox.showerror('Encrypt Error', 'Input pada entry box ciphertext tidak boleh kosong, nyaa~')
+        messagebox.showerror('Decrypt Error', 'Input pada entry box ciphertext tidak boleh kosong, nyaa~')
+    elif(len(rc4mod.b64toutf8(cptext)) == 0 ):
+        messagebox.showerror('Decrypt Error', 'Input pada entry box ciphertext hanya berisi character bukan b64, nyaa~')
     elif(len(key) == 0):
-        messagebox.showerror('Encrypt Error', 'Input pada entry box key tidak boleh kosong, nyaa~')
+        messagebox.showerror('Decrypt Error', 'Input pada entry box key tidak berisi , nyaa~')
     else:
         try:
             plaintext = rc4mod.cipherTextDec(cptext, key)
@@ -99,11 +101,8 @@ def loadfilebytes(filename:str):
 
 
 # GUI
-OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH = OUTPUT_PATH / Path(r"D:\COODING\Kripto\kripto-tugas-1\build\assets")
-
 def relative_to_assets(path: str) -> Path:
-    return ASSETS_PATH / Path(path)
+    return  'build/assets/' + path
 
 
 # func untuk set entry
